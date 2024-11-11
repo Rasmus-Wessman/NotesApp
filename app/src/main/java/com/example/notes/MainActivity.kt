@@ -124,8 +124,7 @@ fun AddNoteScreen(navController: NavController, noteList: MutableList<NotesAppIt
                 navigationIcon = {
                     IconButton(
                         onClick = {
-                            if (title.isNotBlank() && subtitle.isNotBlank()) {
-                                noteList.add(NotesAppItem(id = noteList.size, title = title, subtitle = subtitle))
+                            if (!title.isNotBlank() && !subtitle.isNotBlank()) {
                                 navController.popBackStack()
                             }
                         }) {
